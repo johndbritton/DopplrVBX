@@ -1,0 +1,6 @@
+{
+    "name" : "Dopplr: Location",
+    "description" : "Speak location on a given date.",
+    "type" : "voice",
+    "disabled" : false
+}

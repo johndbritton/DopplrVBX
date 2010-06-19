@@ -1,0 +1,6 @@
+{
+  "name" : "Dopplr: Is Travelling?",
+  "description" : "Is the traveller at home or on the road?",
+  "type" : "voice",
+  "disabled" : false
+}

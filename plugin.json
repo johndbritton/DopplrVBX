@@ -1,0 +1,13 @@
+{
+  "name" : "Dopplr",
+  "author" : "John Britton @johndbritton",
+  "description" : "Dopplr applets for OpenVBX. 'Where in the world is the callee?'",
+  "url" : "http://www.johndbritton.com",
+  "disabled" : false,
+  "links" : [{
+              "menu" : "setup",
+              "url" : "dopplr",
+              "script" : "config/index.php",
+              "label" : "Dopplr"
+            }]
+}
