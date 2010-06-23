@@ -1,0 +1,5 @@
+{
+  "name" : "Dopplr: Local Time",
+  "description" : "Report the local time of the traveller to the caller.",
+  "type" : "voice"
+}

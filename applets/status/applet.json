@@ -1,6 +1,5 @@
 {
   "name" : "Dopplr: Status",
   "description" : "Report current travel status.",
-  "type" : "voice",
-  "disabled" : false
+  "type" : "voice"
 }

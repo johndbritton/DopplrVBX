@@ -1,7 +1,12 @@
 <?php
-$token = PluginData::get('dopplr_token');
-$baseurl = PluginData::get('dopplr_baseurl');
-
+require_once(dirname(__FILE__) . '/../../lib/dopplr.php');
+$dopplr = new Dopplr();
 $response = new Response();
-$response->addSay('John is currently on the road.');
+
+if($dopplr->is_travelling()) {
+  $response->addRedirect(AppletInstance::GetDropZoneUrl('on_the_road'));
+} else {
+  $response->addRedirect(AppletInstance::GetDropZoneUrl('at_home'));
+}
+
 $response->Respond();
