@@ -1,6 +1,10 @@
 <?php
 require_once(dirname(__FILE__) . '/../../lib/dopplr.php');
-$dopplr = new Dopplr();
+
+$user = OpenVBX::getCurrentUser();
+$dopplr_token = PluginData::get("dopplr_token_{$user->id}", "");
+
+$dopplr = new Dopplr($dopplr_token);
 $response = new Response();
 
 if($dopplr->is_travelling()) {

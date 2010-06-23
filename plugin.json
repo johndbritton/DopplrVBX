@@ -9,5 +9,5 @@
               "script" : "config/index.php",
               "label" : "Dopplr"
             }],
-  "version" : '0.1337'
+  "version" : "0.1337"
 }

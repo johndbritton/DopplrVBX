@@ -1,28 +1,67 @@
 <?php
 
-class Dopplr {  
+class Dopplr {
+  const DOPPLR_BASEURL = "https://www.dopplr.com/api";
+
+  function __construct($token) {
+    $this->token = $token;
+  }
+  
   function status() {
-    return 'is in San Francisco until June 25th.';
+    $traveller_info = $this->traveller_info();
+    return $traveller_info->traveller->status;
   }
   
   function name() {
-    return 'John';
+    $traveller_info = $this->traveller_info();
+    return $traveller_info->traveller->name;
   }
-  
+
   function local_time() {
-    return 'Noon';
+    $traveller_info = $this->traveller_info();
+    $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
+    return $city_info->city->localtime;
   }
-  
+
   function timezone() {
-    return 'GMT';
+    $traveller_info = $this->traveller_info();
+    $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
+    return print_r($city_info, TRUE);
   }
 
   function is_travelling() {
-    return TRUE;
+    return $traveller_info->traveller->travel_today;
   }
   
   private function traveller_info() {
-    return 'stuff';
+    $params = array(
+      'format' => 'js',
+      'token' => $this->token
+    );
+    return $this->curl_url('traveller_info', $params);
+  }
+
+  private function city_info($geoname_id) {
+    $params = array(
+      'format' => 'js',
+      'token' => $this->token,
+      'geoname_id' => $geoname_id
+    );
+    return $this->curl_url('city_info', $params);
+  }
+  
+  private function curl_url($resource, $params) {
+    $query = http_build_query($params);
+
+    $c = curl_init();
+    curl_setopt($c, CURLOPT_URL, self::DOPPLR_BASEURL . "/$resource?" . $query);
+    curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+
+    $output = curl_exec($c);
+    $info = curl_getinfo($c);
+    curl_close($c);
+
+    return json_decode($output);
   }
   
 }

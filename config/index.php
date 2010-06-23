@@ -1,9 +1,8 @@
 <?php
-  $ci = &get_instance();
-  $user_id = $ci->session->userdata('user_id');
-  $dopplr_token = PluginStore::get("dopplr_token_$user_id", "");
+  $user = OpenVBX::getCurrentUser();
+  $dopplr_token = PluginData::get("dopplr_token_{$user->id}", "");
   if (isset($_REQUEST['savebutton'])) {
-    PluginStore::set("dopplr_token_$user_id",$_REQUEST['token']);
+    PluginData::set("dopplr_token_$user_id",$_REQUEST['token']);
     $dopplr_token = $_REQUEST['token'];
     $message = "Settings Saved!";
   }
