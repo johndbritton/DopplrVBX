@@ -1,5 +1,5 @@
 {
-  "name" : "Dopplr: Status",
-  "description" : "Report current travel status.",
+  "name" : "Status",
+  "description" : "Use Dopplr to report the status of the smart traveller.",
   "type" : "voice"
 }

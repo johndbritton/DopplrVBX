@@ -1,5 +1,5 @@
 {
-  "name" : "Dopplr: Route By Location",
-  "description" : "Route the call flow based on location.",
+  "name" : "Route By Location",
+  "description" : "Use Dopplr to route the call flow based on the smart traveller's location.",
   "type" : "voice"
 }

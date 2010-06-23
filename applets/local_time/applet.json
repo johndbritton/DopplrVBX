@@ -1,5 +1,5 @@
 {
-  "name" : "Dopplr: Local Time",
-  "description" : "Report the local time of the traveller to the caller.",
+  "name" : "Local Time",
+  "description" : "Use Dopplr to report the local time of the smart traveller to the caller.",
   "type" : "voice"
 }
