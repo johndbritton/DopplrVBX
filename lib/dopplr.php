@@ -29,7 +29,7 @@ class Dopplr {
     return $city_info->city->timezone . ' U.T.C. Offset: '. $city_info->city->utcoffset;
   }
 
-  function is_travelling() {
+  function travel_today() {
     return $traveller_info->traveller->travel_today;
   }
   
