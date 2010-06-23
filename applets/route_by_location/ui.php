@@ -1,6 +1,10 @@
 <div class="vbx-applet">
-  <h2 class="settings-title">Dopplr: Is Travelling?</h2>
-  <p>This is a basic logic building block based on if the traveller is at home, or on the road.</p>
+  <h2 class="settings-title">Dopplr: Travel Today?</h2>
+  <p>This is a basic logic building block based on the smart traveller's location'.</p>
+  <h3>in transit</h3>
+  <div class="vbx-full-pane">
+    <?php echo AppletUI::dropZone('in_transit', 'Drop applet here'); ?>
+  </div>
   <h3>on the road</h3>
   <div class="vbx-full-pane">
     <?php echo AppletUI::dropZone('on_the_road', 'Drop applet here'); ?>
