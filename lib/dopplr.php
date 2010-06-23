@@ -26,7 +26,7 @@ class Dopplr {
   function timezone() {
     $traveller_info = $this->traveller_info();
     $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
-    return print_r($city_info, TRUE);
+    return $city_info->city->timezone;
   }
 
   function is_travelling() {
