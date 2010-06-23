@@ -26,7 +26,7 @@ class Dopplr {
   function timezone() {
     $traveller_info = $this->traveller_info();
     $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
-    return $city_info->city->timezone . ' U.T.C. Offset: '. $city_info->city->utcoffset;
+    return $city_info->city->timezone . ', U.T.C. Offset: '. $city_info->city->utcoffset;
   }
 
   function travel_today() {
