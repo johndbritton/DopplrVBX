@@ -40,7 +40,7 @@ class Dopplr {
       $offset_direction = 'plus';
     }
 
-    return $timezone . ', U.T.C. Offset: '. $offset_direction. ' ' . $offset_hours;
+    return $timezone . '. U.T.C. Offset: '. $offset_direction. ' ' . $offset_hours;
   }
 
   function travel_today() {
