@@ -1,5 +1,5 @@
 <div class="vbx-applet">
-  <h2 class="settings-title">Dopplr: Travel Today?</h2>
+  <h2 class="settings-title">Dopplr: Route By Location</h2>
   <p>This is a basic logic building block based on the smart traveller's location'.</p>
   <h3>in transit</h3>
   <div class="vbx-full-pane">
