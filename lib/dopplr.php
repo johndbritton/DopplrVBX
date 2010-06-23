@@ -21,13 +21,26 @@ class Dopplr {
     $traveller_info = $this->traveller_info();
     $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
     $date = date_parse($city_info->city->localtime);
-    return date('g:i a', strtotime($date['hour'].":".$date['minute']));
+    return date('g:i A', strtotime($date['hour'].":".$date['minute']));
   }
 
   function timezone() {
     $traveller_info = $this->traveller_info();
     $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
-    return $city_info->city->timezone . ', U.T.C. Offset: '. $city_info->city->utcoffset;
+
+    $timezone = str_replace("/", " ", $city_info->city->timezone);
+    $timezone = str_replace("_", " ", $timezone);
+
+    $offset_seconds = $city_info->city->utcoffset;
+    $offset_hours = abs($offset_seconds / 60 / 60);
+    
+    if ($offset_seconds < 0) {
+      $offset_direction = 'minus';
+    } else {
+      $offset_direction = 'plus';
+    }
+
+    return $timezone . ', U.T.C. Offset: '. $offset_direction. ' ' . $offset_hours;
   }
 
   function travel_today() {
