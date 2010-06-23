@@ -20,7 +20,8 @@ class Dopplr {
   function local_time() {
     $traveller_info = $this->traveller_info();
     $city_info = $this->city_info($traveller_info->traveller->current_city->geoname_id);
-    return $city_info->city->localtime;
+    $date = date_parse($city_info->city->localtime);
+    return date('g:i a', strtotime($date['hour'].":".$date['minute']));
   }
 
   function timezone() {
