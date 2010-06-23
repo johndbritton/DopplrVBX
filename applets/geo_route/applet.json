@@ -1,5 +1,5 @@
 {
-  "name" : "Route By Location",
+  "name" : "Geo Route",
   "description" : "Use Dopplr to route the call flow based on the smart traveller's location.",
   "type" : "voice"
 }
