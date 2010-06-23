@@ -1,0 +1,5 @@
+{
+  "name" : "Timezone",
+  "description" : "Use Dopplr to report the timezone and offset of the smart traveller to the caller.",
+  "type" : "voice"
+}
