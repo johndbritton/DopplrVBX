@@ -30,7 +30,13 @@ class Dopplr {
   }
 
   function travel_today() {
+    $traveller_info = $this->traveller_info();
     return $traveller_info->traveller->travel_today;
+  }
+  
+  function at_home() {
+    $traveller_info = $this->traveller_info();
+    return $traveller_info->traveller->home_city->geoname_id == $traveller_info->traveller->current_city->geoname_id;
   }
   
   private function traveller_info() {

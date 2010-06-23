@@ -9,10 +9,10 @@ $response = new Response();
 
 if($dopplr->travel_today()) {
   $response->addRedirect(AppletInstance::GetDropZoneUrl('in_transit'));
-} else if(TRUE) {
-  $response->addRedirect(AppletInstance::GetDropZoneUrl('on_the_road'));
-} else {
+} else if($dopplr->at_home) {
   $response->addRedirect(AppletInstance::GetDropZoneUrl('at_home'));
+} else {
+  $response->addRedirect(AppletInstance::GetDropZoneUrl('on_the_road'));
 }
 
 $response->Respond();
